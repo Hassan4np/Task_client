@@ -27,9 +27,8 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink to="/"> <li><a>Home</a></li></NavLink>
-                            <NavLink to="/shop"> <li><a>Shop</a></li></NavLink>
-
-                            <NavLink to="/cart"> <li><a>My Cart</a></li></NavLink>
+                            <NavLink to="/about"> <li><a>About</a></li></NavLink>
+                            <NavLink to="/contact"> <li><a>Contact</a></li></NavLink>
                             <NavLink to="/daseboard/task"> <li><a>Daseboard</a></li></NavLink>
                             {
                                 user ? <button onClick={hangellogout}><li><a>logout</a></li></button> : <NavLink to="/login"><li><a>Login</a></li></NavLink>
@@ -41,9 +40,8 @@ const Navbar = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <NavLink to="/"> <li><a>Home</a></li></NavLink>
-                            <NavLink to="/shop"> <li><a>Shop</a></li></NavLink>
-
-                            <NavLink to="/cart"> <li><a>My Cart</a></li></NavLink>
+                            <NavLink to="/about"> <li><a>About</a></li></NavLink>
+                            <NavLink to="/contact"> <li><a>Contact</a></li></NavLink>
                             <NavLink to="/daseboard/task"> <li><a>Daseboard</a></li></NavLink>
 
                         </ul>

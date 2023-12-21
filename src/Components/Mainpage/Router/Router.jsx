@@ -8,10 +8,12 @@ import Signup from "../Register/Signup";
 
 import PrivateRepo from "../PrivateRepo/PrivateRepo";
 import Daseboard from "../Daseboard.jsx/Daseboard";
-import Userhome from "../Daseboard.jsx/User/Userhome";
+
 import Addtask from "../Daseboard.jsx/User/Addtask";
 import My_Task from "../Daseboard.jsx/User/My_Task";
 import UserType from "../Daseboard.jsx/User/UserType";
+import About from "../Home.jsx/About";
+import Contact from "../Home.jsx/Contact";
 
 
 const Mybrowser = createBrowserRouter([
@@ -24,7 +26,7 @@ const Mybrowser = createBrowserRouter([
         path: "/",
         element: <Home></Home>
       },
-   
+
       {
         path: '/login',
         element: <Signin></Signin>
@@ -33,24 +35,33 @@ const Mybrowser = createBrowserRouter([
         path: '/signup',
         element: <Signup></Signup>
       },
-    
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+
       {
         path: '/daseboard',
         element: <PrivateRepo><Daseboard></Daseboard></PrivateRepo>,
         children: [
           {
-            path:'addtask',
-            element:<Addtask></Addtask>
+            path: 'addtask',
+            element: <Addtask></Addtask>
           },
           {
-            path:'task',
-            element:<My_Task></My_Task>
+            path: 'task',
+            element: <My_Task></My_Task>
           },
           {
-            path:'usert',
-            element:<UserType></UserType>
-          }
-         
+            path: 'usert',
+            element: <UserType></UserType>
+          },
+
+
         ]
       }
 
