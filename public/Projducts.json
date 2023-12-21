@@ -1,0 +1,72 @@
+[{
+        "img": "https://i.ibb.co/k6hgCfX/Image.png",
+        "name": "Green Apple",
+        "preprice": 25.99,
+        "price": 19.99,
+        "rating": 4.5,
+        "review": 4,
+        "discount": 30,
+        "category": "Fish",
+        "Tag": "health",
+        "sdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "fdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "feedback": "GOOD"
+    },
+    {
+        "img": "https://i.ibb.co/yV3Tp7C/Image-3.png",
+        "name": "Chanise Cabbage",
+        "preprice": 25.99,
+        "price": 19.99,
+        "rating": 4.5,
+        "review": 4,
+        "discount": 30,
+        "category": "Fish",
+        "Tag": "health",
+        "sdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "fdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "feedback": "GOOD"
+    },
+    {
+        "img": "https://i.ibb.co/Nm4s7Rw/Image-4.png",
+        "name": "Green Lettuce",
+        "preprice": 25.99,
+        "price": 19.99,
+        "rating": 4.5,
+        "review": 4,
+        "discount": 30,
+        "category": "Fish",
+        "Tag": "health",
+        "sdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "fdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "feedback": "GOOD"
+    },
+    {
+        "img": "https://i.ibb.co/6XgPpHN/Image-6.png",
+        "name": "Green Chili",
+        "preprice": 25.99,
+        "price": 19.99,
+        "rating": 4.5,
+        "review": 4,
+        "discount": 30,
+        "category": "Fish",
+        "Tag": "health",
+        "sdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "fdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "feedback": "GOOD"
+    },
+    {
+        "img": "https://i.ibb.co/4fr1ctb/Image-2.png",
+        "name": "Corn",
+        "preprice": 25.99,
+        "price": 19.99,
+        "rating": 4.5,
+        "review": 4,
+        "discount": 30,
+        "category": "Fish",
+        "Tag": "health",
+        "sdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "fdec": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores corporis dolor odio, officiis eveniet et sapiente ipsam assumenda. Ab, eaque?",
+        "feedback": "GOOD"
+    }
+
+]
