@@ -15,7 +15,7 @@ const Addtask = () => {
     }
     return (
         <div >
-            <form onSubmit={handleSubmit} className="p-10 w-full border  flex-1 " data-aos="flip-left">
+            <form onSubmit={handleSubmit} className="p-10 w-full border  flex-1 bg-green-100 rounded-xl " data-aos="flip-left">
             <h1 className="text-4xl text-center py-5 font-bold">Add Contant</h1>
             <hr />
                 <div className="bg-gradient-to-r   rounded-md p-5">

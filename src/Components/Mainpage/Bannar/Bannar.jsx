@@ -10,7 +10,7 @@ const Bannar = () => {
                     <div className="text-white">
                         <h1 className="mb-5 text-5xl font-bold">Wellcome</h1>
                         <p className="mb-5 w-[50%] ">Efficient task management maximizes productivity. Prioritize, schedule, and track tasks using apps like Trello or Asana to streamline workflows and achieve goals effectively.</p>
-                      <Link to={`/daseboard/userhome`}><button className="btn bg-gray-300 font-bold">Let’s Explore</button></Link>
+                      <Link to={`/daseboard/task`}><button className="btn bg-gray-300 font-bold">Let’s Explore</button></Link>
                     </div>
                 </div>
             </div>

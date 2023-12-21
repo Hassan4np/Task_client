@@ -11,6 +11,7 @@ import Daseboard from "../Daseboard.jsx/Daseboard";
 import Userhome from "../Daseboard.jsx/User/Userhome";
 import Addtask from "../Daseboard.jsx/User/Addtask";
 import My_Task from "../Daseboard.jsx/User/My_Task";
+import UserType from "../Daseboard.jsx/User/UserType";
 
 
 const Mybrowser = createBrowserRouter([
@@ -38,16 +39,16 @@ const Mybrowser = createBrowserRouter([
         element: <PrivateRepo><Daseboard></Daseboard></PrivateRepo>,
         children: [
           {
-            path: 'userhome',
-            element:<PrivateRepo><Userhome></Userhome></PrivateRepo>
-          },
-          {
             path:'addtask',
             element:<Addtask></Addtask>
           },
           {
             path:'task',
             element:<My_Task></My_Task>
+          },
+          {
+            path:'usert',
+            element:<UserType></UserType>
           }
          
         ]

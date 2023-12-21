@@ -30,7 +30,7 @@ const Navbar = () => {
                             <NavLink to="/shop"> <li><a>Shop</a></li></NavLink>
 
                             <NavLink to="/cart"> <li><a>My Cart</a></li></NavLink>
-                            <NavLink to="/daseboard/userhome"> <li><a>Daseboard</a></li></NavLink>
+                            <NavLink to="/daseboard/task"> <li><a>Daseboard</a></li></NavLink>
                             {
                                 user ? <button onClick={hangellogout}><li><a>logout</a></li></button> : <NavLink to="/login"><li><a>Login</a></li></NavLink>
                             }
@@ -44,7 +44,7 @@ const Navbar = () => {
                             <NavLink to="/shop"> <li><a>Shop</a></li></NavLink>
 
                             <NavLink to="/cart"> <li><a>My Cart</a></li></NavLink>
-                            <NavLink to="/daseboard/userhome"> <li><a>Daseboard</a></li></NavLink>
+                            <NavLink to="/daseboard/task"> <li><a>Daseboard</a></li></NavLink>
 
                         </ul>
                     </div>
