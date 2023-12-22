@@ -35,7 +35,10 @@ const My_Task = () => {
     if (isLoading) {
         return <h1 className="text-5xl text-center py-20">Loading</h1>
     }
-
+    console.log(data)
+    console.log(ongoing)
+    console.log(complate)
+//delete item
     const handleclick = (id) => {
         console.log(id)
         axoussecrt.delete(`/task/${id}`)
@@ -45,8 +48,32 @@ const My_Task = () => {
                     toast.success('Item successfully Delete ')
                     refetch()
                 }
-                
-              
+            }).catch(error => {
+                console.log(error)
+            })
+    };
+    const handledeletecompate = (id) => {
+        console.log(id)
+        axoussecrt.delete(`/complate/task/${id}`)
+            .then(res => {
+                console.log(res.data)
+                if(res.data.deletedCount>0){
+                    toast.success('Item successfully Delete ')
+                    refetch()
+                }
+            }).catch(error => {
+                console.log(error)
+            })
+    };
+    const handledeleteongoing = (id) => {
+        console.log(id)
+        axoussecrt.delete(`/ongoing/task/on/${id}`)
+            .then(res => {
+                console.log(res.data)
+                if(res.data.deletedCount>0){
+                    toast.success('Item successfully Delete ')
+                    refetch()
+                }
             }).catch(error => {
                 console.log(error)
             })
@@ -67,6 +94,7 @@ const My_Task = () => {
                 refetch()
                 if (res.data.result.acknowledged) {
                     toast.success('Ongoing task added')
+                    refetch()
                 }
             }).catch(error => {
                 console.log(error)
@@ -89,6 +117,7 @@ const My_Task = () => {
                 refetch()
                 if (res.data.result.acknowledged) {
                     toast.success('Ongoing task added')
+                    refetch()
                 }
             }).catch(error => {
                 console.log(error)
@@ -111,6 +140,7 @@ const My_Task = () => {
                 refetch()
                 if (res.data.result.acknowledged) {
                     toast.success('Ongoing task added')
+                    refetch()
                 }
             }).catch(error => {
                 console.log(error)
@@ -129,9 +159,9 @@ const My_Task = () => {
         }
         axoussecrt.post('/task/complate/on/pre/main', iteminfo)
             .then(res => {
-                console.log(res.data.result)
+                console.log(res.data)
                 refetch()
-                if (res.data.result.acknowledged) {
+                if (res.data.deleteitem.deletedCount>0) {
                     toast.success('Ongoing task added')
                     refetch()
                 }
@@ -183,7 +213,7 @@ const My_Task = () => {
                             <div className='flex justify-between'>
                                 <div>
                                     <Link to={`/daseboard/update/${item?._id}`}><button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2"><CiEdit className='text-2xl text-green-500' /></button></Link>
-                                    <button onClick={() => handleclick(item?._id)} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
+                                    <button onClick={() => handledeleteongoing(item?._id)} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
                                 </div>
                                 <div className='pr-2'>
                                     <button onClick={() => handlemain(item)} className='text-green-400  mr-1 bg-white p-1 rounded-md'><FaArrowLeft /></button>
@@ -207,7 +237,7 @@ const My_Task = () => {
                             <div className='flex justify-between'>
                                 <div>
                                     <Link to={`/daseboard/update/${item?._id}`}><button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2"><CiEdit className='text-2xl text-green-500' /></button></Link>
-                                    <button onClick={() => handleclick(item?._id)} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
+                                    <button onClick={() => handledeletecompate(item?._id)} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
                                 </div>
                                 <div className='pr-2'>
                                     <button onClick={() => handletogo(item)} className='text-green-400 bg-white p-1 rounded-md'><FaArrowLeft /></button>
