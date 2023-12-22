@@ -13,9 +13,9 @@ const Bannar = () => {
             <div className="hero min-h-[550px] bg-opacity-30" style={{ backgroundImage: `url(${p1})` }}>
               
                 <div className=" text-neutral-content ml-">
-                    <div className="text-white" data-aos="flip-up">
-                        <h1 className="mb-5 text-5xl font-bold">Wellcome</h1>
-                        <p className="mb-5 w-[50%] ">Efficient task management maximizes productivity. Prioritize, schedule, and track tasks using apps like Trello or Asana to streamline workflows and achieve goals effectively.</p>
+                    <div className="text-white ml-20 lg:ml-0" data-aos="flip-up">
+                        <h1 className="mb-5 text-black  text-3xl md:text-5xl font-bold">Wellcome</h1>
+                        <p className="mb-5  text-[14px] lg:text-base md:w-[50%] ">Efficient task management maximizes productivity. Prioritize, schedule, and track tasks using apps like Trello or Asana to streamline workflows and achieve goals effectively.</p>
                       <Link to={`/daseboard/task`}><button className="btn bg-gray-300 font-bold">Let’s Explore</button></Link>
                     </div>
                 </div>

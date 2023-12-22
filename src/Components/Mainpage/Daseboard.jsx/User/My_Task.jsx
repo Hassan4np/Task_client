@@ -42,7 +42,7 @@ const My_Task = () => {
             })
     }
     return (
-        <div>
+        <div className='px-5'>
             <h1 className="text-center text-2xl font-bold py-5">My Content</h1>
             <div className="" >
             </div>
