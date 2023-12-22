@@ -1,118 +1,107 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import 'react-tabs/style/react-tabs.css';
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
+import useAxousSecret from '../../Hooks.jsx/useAxousSecret';
+import { useQuery } from '@tanstack/react-query';
+import useAuth from '../../Hooks.jsx/useAuth';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const My_Task = () => {
+    useEffect(()=>{
+        AOS.init({duration:2000});
+    },[])
+    const { user } = useAuth()
+    const axoussecrt = useAxousSecret();
+
+
+    const { data, isLoading, refetch } = useQuery({
+        queryKey: ['task', user?.email],
+        queryFn: async () => {
+            const res = await axoussecrt.get(`/task?email=${user?.email}`);
+            return res.data
+        }
+    });
+    if (isLoading) {
+        return <h1 className="text-5xl text-center py-20">Loading</h1>
+    }
+    console.log(data)
+    const handleclick = (id) => {
+        console.log(id)
+        axoussecrt.delete(`/task/${id}`)
+            .then(res => {
+                console.log(res.data)
+                toast.success('Item successfully Delete ')
+                refetch()
+            }).catch(error => {
+                console.log(error)
+            })
+    }
     return (
         <div>
             <h1 className="text-center text-2xl font-bold py-5">My Content</h1>
             <div className="" >
-                <Tabs className="min-h-[150px]">
-                    <TabList >
-                        <Tab >My Task</Tab>
-                        <Tab>Complted Task</Tab>
-                        <Tab>Is ongoing</Tab>
-                    </TabList>
-
-                    <TabPanel className="text-start">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-5">
-                            <div className="card bg-gray-300">
-                                <div className="card-body ">
-                                    <h1 className="text-2xl font-medium  ">Banker job now here</h1>
-                                    <h5 className="text-base font-normal text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Atque aperiam qui sunt iure ea ad fugit? Earum dignissimos quia consequatur!</h5>
-                                    <div className="flex justify-between ">
-                                        <div className="flex">
-                                            <h6 className="mr-5 py-2 px-3 text-white font-bold rounded-lg bg-black">Normal</h6>
-                                            <h6 className="py-2 px-3 rounded-lg text-white font-bold bg-black">23-6-23</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-actions">
-                                        <button className="btn btn-sm">Edit</button>
-                                        <button className="btn btn-sm">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card bg-gray-300">
-                                <div className="card-body ">
-                                    <h1 className="text-2xl font-medium  ">Banker job now here</h1>
-                                    <h5 className="text-base font-normal text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Atque aperiam qui sunt iure ea ad fugit? Earum dignissimos quia consequatur!</h5>
-                                    <div className="flex justify-between ">
-                                        <div className="flex">
-                                            <h6 className="mr-5 py-2 px-3 text-white font-bold rounded-lg bg-black">Normal</h6>
-                                            <h6 className="py-2 px-3 rounded-lg text-white font-bold bg-black">23-6-23</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-actions">
-                                        <button className="btn btn-sm">Update</button>
-                                        <button className="btn btn-sm">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </TabPanel>
-                    <TabPanel className="text-start">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-5">
-                            <div className="card bg-gray-300">
-                                <div className="card-body ">
-                                    <h1 className="text-2xl font-medium  ">Banker job now here</h1>
-                                    <h5 className="text-base font-normal text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Atque aperiam qui sunt iure ea ad fugit? Earum dignissimos quia consequatur!</h5>
-                                    <div className="flex justify-between ">
-                                        <div className="flex">
-                                            <h6 className="mr-5 py-2 px-3 text-white font-bold rounded-lg bg-black">Normal</h6>
-                                            <h6 className="py-2 px-3 rounded-lg text-white font-bold bg-black">23-6-23</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-actions">
-                                        <button className="btn btn-sm">Edit</button>
-                                        <button className="btn btn-sm">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </TabPanel>
-                    <TabPanel className="text-start">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-5">
-                            <div className="card bg-gray-300">
-                                <div className="card-body ">
-                                    <h1 className="text-2xl font-medium  ">Banker job now here</h1>
-                                    <h5 className="text-base font-normal text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Atque aperiam qui sunt iure ea ad fugit? Earum dignissimos quia consequatur!</h5>
-                                    <div className="flex justify-between ">
-                                        <div className="flex">
-                                            <h6 className="mr-5 py-2 px-3 text-white font-bold rounded-lg bg-black">Normal</h6>
-                                            <h6 className="py-2 px-3 rounded-lg text-white font-bold bg-black">23-6-23</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-actions">
-                                        <button className="btn btn-sm">Edit</button>
-                                        <button className="btn btn-sm">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                    </TabPanel>
-                </Tabs>
             </div>
-            {/* <div className="space-y-2 border p-5 rounded-lg bg-gray-300 mb-3 ">
-                <h1 className="text-3xl font-medium  ">Banker job now here</h1>
-                <h5 className="text-lg w-[80%] font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Atque aperiam qui sunt iure ea ad fugit? Earum dignissimos quia consequatur!</h5>
-                <div className="flex justify-between ">
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ' >
+                <div >
+                    <h1 className='text-xl font-bold py-1'>My Task</h1>
+                   {
+                    data?.map(item=> <div key={item?._id} draggable className="space-y-1 border p-2 h-[200px] rounded-lg bg-gray-300 mb-3 "  data-aos="flip-left" >
+                    <h1 className="text-xl font-medium  ">{item?.title}</h1>
+                    <h5 className="text-base w-full h-[70px] font-normal">{item?.dec}
+                    </h5>
                     <div className="flex">
-                        <h6 className="mr-5 py-2 px-3 text-white font-bold rounded-lg bg-black">Normal</h6>
-                        <h6 className="py-2 px-3 rounded-lg text-white font-bold bg-black">23-6-23</h6>
+                        <h6 className="mr-5 py-1 px-2 text-white text-base rounded-lg bg-black">{item?.priority}</h6>
+                        <h6 className="py-1 px-2 rounded-lg text-white  bg-black">{item?.date}</h6>
                     </div>
                     <div>
-                        <button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2">Update</button>
-                        <button className="btn bg-black hover:bg-white hover:text-black text-white btn-sm">Delete</button>
+                        <Link to={`/daseboard/update/${item?._id}`}><button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2"><CiEdit className='text-2xl text-green-500' /></button></Link>
+                        <button onClick={()=>handleclick(item?._id)} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
+                    </div>
+                </div>)
+                   }
+                </div>
+                <div>
+                    <h1 className='text-xl font-bold py-1'>Complate Task</h1>
+                    <div className="space-y-1 border p-2 rounded-lg bg-gray-300 mb-3 h-[200px] "  data-aos="flip-left">
+                        <h1 className="text-xl font-medium  ">Banker job now here</h1>
+                        <h5 className="text-base h-[70px]  font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </h5>
+                        <div>
+                            <div className="flex">
+                                <h6 className="mr-5 py-1 px-2 text-white text-base rounded-lg bg-black">Normal</h6>
+                                <h6 className="py-1 px-2 rounded-lg text-white  bg-black">23-6-23</h6>
+                            </div>
+                            <div>
+                        <Link to={`/daseboard/update/`}><button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2"><CiEdit className='text-2xl text-green-500' /></button></Link>
+                        <button onClick={()=>handleclick()} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
+                    </div>
+                        </div>
                     </div>
                 </div>
-
-            </div> */}
+                <div>
+                    <h1 className='text-xl font-bold py-1'>Ongoing Task</h1>
+                    <div className="space-y-1 border p-2 rounded-lg bg-gray-300 mb-3 h-[200px] " data-aos="flip-right">
+                        <h1 className="text-xl font-medium  ">Banker job now here</h1>
+                        <h5 className="text-base h-[80px]   font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </h5>
+                        <div className=" mt-2 ">
+                            <div className="flex">
+                                <h6 className="mr-5 py-1 px-2 text-white text-base rounded-lg bg-black">Normal</h6>
+                                <h6 className="py-1 px-2 rounded-lg text-white  bg-black">23-6-23</h6>
+                            </div>
+                            <div>
+                        <Link to={`/daseboard/update/}`}><button className="btn hover:bg-white hover:text-black btn-sm bg-black text-white mr-2"><CiEdit className='text-2xl text-green-500' /></button></Link>
+                        <button onClick={()=>handleclick()} className="btn bg-black hover:bg-white hover:text-black text-white btn-sm"><MdOutlineDeleteOutline className='text-2xl text-red-500' /></button>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );

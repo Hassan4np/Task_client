@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiospublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'ocalhost:5000'
   
   });
 

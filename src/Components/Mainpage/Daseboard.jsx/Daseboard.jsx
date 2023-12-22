@@ -1,14 +1,11 @@
 
-import HeaderBannar from '../Global/HeaderBannar';
+
 
 import { Link, Outlet } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
-import { MdLocalPostOffice, MdOutlineDragHandle } from "react-icons/md";
-
-
+import { MdLocalPostOffice } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
 import { IoCreate } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
 import useAuth from '../Hooks.jsx/useAuth';
 
 const Daseboard = () => {
@@ -47,7 +44,10 @@ const Daseboard = () => {
                             <li className=" border bg-white rounded- font- text-[#666]  text-base"><Link to="/daseboard/usert"><FaUser />User type</Link></li>
                         </ul>
                         <ul className="menu p-2">
-                            <li className=" border bg-white rounded- font- text-[#666]  text-base"><Link to="/daseboard/setting"><MdOutlineDragHandle />drag-and-drop</Link></li>
+                            <li className=" border bg-white rounded- font- text-[#666]  text-base"><Link to="/daseboard/usert"><FaUser />User type</Link></li>
+                        </ul>
+                        <ul className="menu p-2">
+                            <li className=" border bg-white rounded- font- text-[#666]  text-base"><Link to="/daseboard/drag"><FaUser />Drop</Link></li>
                         </ul>
                     </div>
                     <ul className="menu p-2" onClick={hangellogout}>

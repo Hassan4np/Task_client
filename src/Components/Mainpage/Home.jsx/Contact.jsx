@@ -6,7 +6,7 @@ const Contact = () => {
         //togo
     }
     return (
-        <div className="min-h-[450px]">
+        <div className="min-h-[450px] py-5">
             <h1 className="text-4xl text-center font-bold py-5">Contact us</h1>
             <div className="lg:flex ">
                 <form onSubmit={handleSubmit} className="p-10 w-full lg:w-1/2 flex-1 " data-aos="flip-left">
@@ -83,7 +83,7 @@ const Contact = () => {
                         <input type="submit" value="Send message" className="w-full mt-5 p-3 rounded-lg font-bold text-xl text-gradient bg-blue-300" />
                     </div>
                 </form>
-                <div className='flex-1 ' data-aos="flip-right ">
+                <div className='flex-1 '  data-aos="flip-right">
                     <div className=' mt-5   lg:mt-20 justify-center items-center ml-10 '>
                         <h1 className="text-3xl font-bold">Get in touch with us</h1>
                         <div className="mt-5 flex border-2 rounded-lg p-3 ">

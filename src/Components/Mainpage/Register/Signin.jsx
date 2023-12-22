@@ -4,6 +4,7 @@ import useAuth from "../Hooks.jsx/useAuth";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 
 
@@ -23,6 +24,7 @@ const Signin = () => {
         UserLogin(email, password)
             .then(res => {
                 console.log(res.user)
+                toast.success('Successfully Login')
                 navigate(loc.state ? loc.state : '/')
 
             }).catch(error => {

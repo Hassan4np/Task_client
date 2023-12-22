@@ -14,6 +14,8 @@ import My_Task from "../Daseboard.jsx/User/My_Task";
 import UserType from "../Daseboard.jsx/User/UserType";
 import About from "../Home.jsx/About";
 import Contact from "../Home.jsx/Contact";
+import Update from "../Daseboard.jsx/User/Update";
+// import Drag from "../Daseboard.jsx/User/Drag";
 
 
 const Mybrowser = createBrowserRouter([
@@ -60,8 +62,14 @@ const Mybrowser = createBrowserRouter([
             path: 'usert',
             element: <UserType></UserType>
           },
-
-
+          {
+            path:'update/:id',
+            element:<Update></Update>
+          },
+          // {
+          //   path:'drag',
+          //   element:<Drag></Drag>
+          // }
         ]
       }
 
