@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiossecrt = axios.create({
-    baseURL: ' https://task-server-smoky.vercel.app'
+    baseURL: 'http://localhost:5000'
   
   });
 

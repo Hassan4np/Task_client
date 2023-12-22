@@ -1,11 +1,34 @@
 import { MdEmail, MdPhone } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
+import useAxousSecret from "../Hooks.jsx/useAxousSecret";
+import { toast } from "react-toastify";
 
 
 const Contact = () => {
+    const axoussecrt = useAxousSecret();
 
-    const handleSubmit=()=>{
-        //togo
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const sub = form.sub.value;
+        const phn = form.phone.value;
+        const message = form.message.value;
+        const contactinfo = {
+            name,email,sub,message,phn
+        }
+        console.log(contactinfo)
+        axoussecrt.post('/contact',contactinfo)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.acknowledged){
+                toast.success('sent successfully contact')
+            }
+        }).catch(error=>{
+            console.log(error)
+        })
+
     }
     return (
         <div className="min-h-[450px] py-5 px-5">
@@ -24,7 +47,7 @@ const Contact = () => {
                                         type="text"
                                         placeholder="name"
                                         required name="name"
-                                     
+                                 
                                         className="input input-bordered w-full" />
 
                                 </label>
@@ -35,7 +58,7 @@ const Contact = () => {
                                 </label>
                                 <label className="input-group">
                                     <input
-                                        type="emai"
+                                        type="email"
                                         placeholder="Email"
                                         required name="email"
                                     

@@ -113,12 +113,12 @@ const My_Task = () => {
         }
         axoussecrt.post('/task/complate/on', iteminfo)
             .then(res => {
-                console.log(res.data.result)
+                console.log(res.data)
                 refetch()
-                if (res.data.result.acknowledged) {
+                if (res.data.deleteitem.deletedCount>0) {
                     toast.success('Ongoing task added')
-                    refetch()
                 }
+                refetch()
             }).catch(error => {
                 console.log(error)
             })
