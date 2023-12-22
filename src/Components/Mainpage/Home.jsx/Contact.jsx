@@ -1,12 +1,14 @@
 import { MdEmail, MdPhone } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 
+
 const Contact = () => {
+
     const handleSubmit=()=>{
         //togo
     }
     return (
-        <div className="min-h-[450px] py-5">
+        <div className="min-h-[450px] py-5 px-5">
             <h1 className="text-4xl text-center font-bold py-5">Contact us</h1>
             <div className="lg:flex ">
                 <form onSubmit={handleSubmit} className="p-10 w-full lg:w-1/2 flex-1 " data-aos="flip-left">
