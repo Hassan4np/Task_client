@@ -5,20 +5,20 @@ import useAxousSecret from "./useAxousSecret";
 import { refresh } from "aos";
 
 
-const useOngoing = () => {
+const useComplate = () => {
     const axoussecrt = useAxousSecret()
     const { user } = useAuth()
 
-    const { data:ongoing=[],isLoading } = useQuery({
-        queryKey: ['ongoing',user.email],
+    const { data:complate=[],isLoading } = useQuery({
+        queryKey: ['complate/on',user.email],
         queryFn: async () => {
-            const res = await axoussecrt.get(`/ongoing/${user?.email}`);
+            const res = await axoussecrt.get(`/complate/on/${user?.email}`);
             return res.data
         }
     });
-  
    
-    return [ongoing,isLoading]
+   
+    return [complate,isLoading]
 };
 
-export default useOngoing;
+export default useComplate;
