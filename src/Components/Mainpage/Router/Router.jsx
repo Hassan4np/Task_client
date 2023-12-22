@@ -52,19 +52,19 @@ const Mybrowser = createBrowserRouter([
         children: [
           {
             path: 'addtask',
-            element: <Addtask></Addtask>
+            element:<PrivateRepo> <Addtask></Addtask></PrivateRepo>
           },
           {
             path: 'task',
-            element: <My_Task></My_Task>
+            element:<PrivateRepo> <My_Task></My_Task></PrivateRepo>
           },
           {
             path: 'usert',
-            element: <UserType></UserType>
+            element:<PrivateRepo> <UserType></UserType></PrivateRepo>
           },
           {
             path:'update/:id',
-            element:<Update></Update>
+            element:<PrivateRepo><Update></Update></PrivateRepo>
           },
           {
             path:'drag',
